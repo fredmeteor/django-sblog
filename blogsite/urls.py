@@ -20,5 +20,7 @@ from django.urls import include, path
 
 urlpatterns = [
  path('admin/', admin.site.urls),
+  path('', include('blog.urls')),  # Optional: make blog the home page
  path('blog/', include('blog.urls', namespace='blog')),
 ]
+
