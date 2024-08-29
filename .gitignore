@@ -6,6 +6,12 @@ data/
 __pycache__/
 *.py[cod]
 *$py.class
+*.pyc
+
+# Virtual environment
+projects_env/
+env/
+venv/
 
 # C extensions
 *.so
