@@ -1,5 +1,5 @@
 {% extends "blog/base.html" %}
-
+{% load widget_tweaks %}
 {% block title %}Share a post{% endblock %}
 
 {% block content %}
@@ -10,10 +10,32 @@
     </p>
   {% else %}
     <h1>Share "{{ post.title }}" by e-mail</h1>
+    {% load widget_tweaks %}
+
     <form method="post" novalidate>
-      {{ form.as_p }}
-      {% csrf_token %}
-      <input type="submit" value="Send e-mail">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="{{ form.name.id_for_label }}">Name</label>
+            {% render_field form.name class="form-control" %}
+            {{ form.name.errors }}
+        </div>
+        <div class="form-group">
+            <label for="{{ form.email.id_for_label }}">Email</label>
+            {% render_field form.email class="form-control" %}
+            {{ form.email.errors }}
+        </div>
+        <div class="form-group">
+            <label for="{{ form.to.id_for_label }}">To</label>
+            {% render_field form.to class="form-control" %}
+            {{ form.to.errors }}
+        </div>
+        <div class="form-group">
+            <label for="{{ form.comments.id_for_label }}">Comments</label>
+            {% render_field form.comments class="form-control" rows="4" %}
+            {{ form.comments.errors }}
+        </div>
+        <button type="submit" class="btn btn-primary">Send e-mail</button>
     </form>
+    
   {% endif %}
 {% endblock %}
