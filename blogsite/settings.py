@@ -27,7 +27,8 @@ SECRET_KEY = 'django-insecure-n6i_)tzku69d9!y6zwtw74)q9wtz2wqlgt=f##@3q8%+rsciup
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1','https://django-sblog-j5l23mda8-fredmeteors-projects.vercel.app/']
+
 
 LOGIN_REDIRECT_URL = "home"
 
